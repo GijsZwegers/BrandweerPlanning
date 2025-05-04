@@ -1,7 +1,7 @@
 package org.acme.optaplanner.domain;
 
-import org.acme.optaplanner.persistence.Persoon;
-import org.acme.optaplanner.persistence.Rol;
+import org.acme.optaplanner.persistence.Person;
+import org.acme.optaplanner.persistence.Role;
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.lookup.PlanningId;
 import org.optaplanner.core.api.domain.variable.PlanningVariable;
@@ -12,22 +12,22 @@ import java.time.LocalDate;
 public class Dienst {
     @PlanningId
     private Long id;
-    private Rol rol;
+    private Role role;
     private LocalDate datum;
 
     // Dit is de planningvariabele: welke Persoon wordt toegewezen?
     @PlanningVariable(valueRangeProviderRefs = "persoonRange")
-    private Persoon persoon;
+    private Person person;
 
     public Dienst() {}
-    public Dienst(Long id, Rol rol, LocalDate datum) {
+    public Dienst(Long id, Role role, LocalDate datum) {
         this.id = id;
-        this.rol = rol;
+        this.role = role;
         this.datum = datum;
     }
     public Long getId() { return id; }
-    public Rol getRol() { return rol; }
+    public Role getRol() { return role; }
     public LocalDate getDatum() { return datum; }
-    public Persoon getPersoon() { return persoon; }
-    public void setPersoon(Persoon persoon) { this.persoon = persoon; }
+    public Person getPersoon() { return person; }
+    public void setPersoon(Person person) { this.person = person; }
 }

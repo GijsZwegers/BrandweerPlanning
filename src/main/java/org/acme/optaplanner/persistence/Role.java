@@ -1,6 +1,6 @@
 package org.acme.optaplanner.persistence;
 
-public enum Rol {
+public enum Role {
     OEFENLEIDER,
     ASSISTENT_OEFENLEIDER,
     ENSCENEERDER,
